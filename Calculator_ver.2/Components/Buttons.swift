@@ -8,11 +8,24 @@
 import SwiftUI
 
 extension Button {
-    func blackBtnStyle() -> some View {
+    func blackStyle() -> some View {
         self
-            .frame(width: 50, height: 50)
             .foregroundColor(Color.white)
+            .frame(maxWidth: 100, maxHeight: 100)
             .background(Color.black)
-            .cornerRadius(10)
+    }
+    
+    func grayStyle() -> some View {
+        self
+            .frame(maxWidth: 100, maxHeight: 100)
+            .background(Color(red: 100/255, green: 100/255, blue: 100/255))
+            .foregroundColor(.white)
+    }
+    
+    func orangeStyle() -> some View {
+        self
+            .foregroundColor(Color.white)
+            .frame(maxWidth: 100, maxHeight: 100)
+            .background(Color.orange)            
     }
 }
