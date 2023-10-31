@@ -14,6 +14,7 @@
 		5AAF04AB2AF0AF0700F25166 /* Calculator_ver_2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAF04AA2AF0AF0700F25166 /* Calculator_ver_2Tests.swift */; };
 		5AAF04B52AF0AF0700F25166 /* Calculator_ver_2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAF04B42AF0AF0700F25166 /* Calculator_ver_2UITests.swift */; };
 		5AAF04B72AF0AF0700F25166 /* Calculator_ver_2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAF04B62AF0AF0700F25166 /* Calculator_ver_2UITestsLaunchTests.swift */; };
+		5AAF04CA2AF0B16C00F25166 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAF04C92AF0B16C00F25166 /* Buttons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		5AAF04B02AF0AF0700F25166 /* Calculator_ver.2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Calculator_ver.2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AAF04B42AF0AF0700F25166 /* Calculator_ver_2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator_ver_2UITests.swift; sourceTree = "<group>"; };
 		5AAF04B62AF0AF0700F25166 /* Calculator_ver_2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator_ver_2UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5AAF04C92AF0B16C00F25166 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		5AAF04982AF0AF0600F25166 /* Calculator_ver.2 */ = {
 			isa = PBXGroup;
 			children = (
+				5AAF04C62AF0B14100F25166 /* Components */,
 				5AAF04C52AF0AF7900F25166 /* Controllers */,
 				5AAF04C42AF0AF7200F25166 /* Models */,
 				5AAF04C32AF0AF6B00F25166 /* Views */,
@@ -149,6 +152,14 @@
 			children = (
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5AAF04C62AF0B14100F25166 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5AAF04C92AF0B16C00F25166 /* Buttons.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AAF04CA2AF0B16C00F25166 /* Buttons.swift in Sources */,
 				5AAF049C2AF0AF0600F25166 /* ContentView.swift in Sources */,
 				5AAF049A2AF0AF0600F25166 /* Calculator_ver_2App.swift in Sources */,
 			);

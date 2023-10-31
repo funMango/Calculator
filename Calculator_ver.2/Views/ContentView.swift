@@ -10,14 +10,29 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Button("1") {
-                
-            }
-            .frame(width: 50, height: 50)
-            .foregroundColor(Color.gray)
+            
+            BtnStack(first: 1, last: 3)
+            BtnStack(first: 4, last: 6)
+            BtnStack(first: 7, last: 9)
+            
             
         }
         .padding()
+    }
+}
+
+struct BtnStack: View {
+    let first: Int
+    let last: Int
+    var body: some View {
+        HStack {
+            ForEach(first...last, id: \.self) { index in
+                Button("\(index)") {
+                    // Button action code here
+                }
+                .blackBtnStyle()
+            }
+        }
     }
 }
 
