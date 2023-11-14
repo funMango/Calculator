@@ -17,6 +17,14 @@ struct Calculator {
         //return String(result)
     }
     
+    func calculate(_ number1: String, _ number2: String, _ op: String) -> String {
+        if let num1 = Double(number1), let num2 = Double(number2) {
+            let result = calculate(num1, num2, op)
+            return convertor.doubleToString(result)
+        }
+        return number2
+    }
+    
     func calcPostFix(_ values: [String]) -> Double {
         var numbers : [Double] = []
         

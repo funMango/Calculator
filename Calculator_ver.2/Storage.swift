@@ -28,6 +28,10 @@ class Storage {
         return nil
     }
     
+    func popLast() -> String? {
+        return values.popLast()
+    }
+    
     func push(_ value: String) {
         values.append(value)
     }

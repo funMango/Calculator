@@ -18,44 +18,32 @@ struct OpProcessor {
             return "0"
             
         case .addition, .subtraction:            
-            storage.push(number)
-            let result = calculator.calculate(storage)
-            storage.reset()
-            storage.push(result)
-            storage.push(op.rawValue)
-            return storage.getFirst()
             
-        case .division:
-            if storage.getLast() == "x" {
-                storage.push(number)
-                let result = calculator.calculate(storage)
-                storage.reset()
-                storage.push(result)
-                storage.push(op.rawValue)
-                return storage.getFirst()
+            return process(storage, number, op)
+            
+        case .division, .multiplication:
+            if storage.getLast() == "x" || storage.getLast() == "÷" {
+                if let oper = storage.popLast() , let popNum = storage.popLast() {
+                    let result = calculator.calculate(popNum, number, oper)
+                    storage.push(result)
+                    storage.push(op.rawValue)
+                    return result
+                }
             } else {
-                storage.push(number)
-                storage.push(op.rawValue)
+                save(storage, number, op.rawValue)
             }            
                         
-        case .multiplication:
-            if storage.getLast() == "÷" {
-                storage.push(number)
-                let result = calculator.calculate(storage)
-                storage.reset()
-                storage.push(result)
-                storage.push(op.rawValue)
-                return storage.getFirst()
-            } else {
-                storage.push(number)
-                storage.push(op.rawValue)
-            }
+//        case .multiplication:
+//            if storage.getLast() == "x" || storage.getLast() == "÷" {
+//                //return process(storage, number, op)
+//            } else {
+//                save(storage, number, op.rawValue)
+//            }
                                                                                          
         case .result:
             storage.push(number)
             if let num = storage.lastNumber, let oper = storage.lastOper ,(storage.values.count == 1) {
-                storage.push(oper)
-                storage.push(num)
+                save(storage, oper, num)
             } else {
                 storage.lastNumber = number
                 storage.lastOper = storage.values[storage.values.count - 2]
@@ -69,5 +57,18 @@ struct OpProcessor {
             return nil
         }
         return nil
+    }
+    
+    func process(_ storage: Storage, _ number: String, _ op: Operator) -> String? {
+        storage.push(number)
+        let result = calculator.calculate(storage)
+        storage.reset()
+        save(storage, result, op.rawValue)
+        return storage.getFirst()
+    }
+    
+    func save(_ storage: Storage, _ target1: String, _ target2: String) {
+        storage.push(target1)
+        storage.push(target2)
     }
 }
