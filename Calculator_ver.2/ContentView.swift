@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var stateObj: State = State()
     
     var body: some View {
         ZStack {
@@ -17,30 +18,52 @@ struct ContentView: View {
                 Spacer()
                 
                 HStack {
-                    Text("=")
-                        .font(.system(size: 60))
-                        .foregroundColor(.white)
                     Spacer()
-                    Text(String(format: "%.2f", 12.5))
+                    Text(stateObj.number)
                         .font(.system(size: 73))
                         .foregroundColor(.white)
                         .padding()
-                }                
+                }
+                
+                Grid {
+                    GridRow {
+                        BtnOperator(stateObj: stateObj, op: .reset, isPointColor: false)
+                        BtnOperator(stateObj: stateObj, op: .changeSign, isPointColor: false)
+                        BtnOperator(stateObj: stateObj, op: .percent, isPointColor: false)
+                        BtnOperator(stateObj: stateObj, op: .division, isPointColor: true)
+                    }
+                    
+                    GridRow {
+                        BtnNumber(stateObj: stateObj, number: .seven, isPointColor: false)
+                        BtnNumber(stateObj: stateObj, number: .eight, isPointColor: false)
+                        BtnNumber(stateObj: stateObj, number: .nine, isPointColor: false)
+                        BtnOperator(stateObj: stateObj, op: .multiplication, isPointColor: true)
+                    }
+                    
+                    GridRow {
+                        BtnNumber(stateObj: stateObj, number: .four, isPointColor: false)
+                        BtnNumber(stateObj: stateObj, number: .five, isPointColor: false)
+                        BtnNumber(stateObj: stateObj, number: .six, isPointColor: false)
+                        BtnOperator(stateObj: stateObj, op: .subtraction, isPointColor: true)
+                    }
+                    
+                    GridRow {
+                        BtnNumber(stateObj: stateObj, number: .one, isPointColor: false)
+                        BtnNumber(stateObj: stateObj, number: .two, isPointColor: false)
+                        BtnNumber(stateObj: stateObj, number: .three, isPointColor: false)
+                        BtnOperator(stateObj: stateObj, op: .addition, isPointColor: true)
+                    }
+                    
+                    GridRow {
+                        BtnZero(stateObj: stateObj, number: .zero, isPointColor: false)
+                            .gridCellColumns(2)
+                        BtnNumber(stateObj: stateObj, number: .eight, isPointColor: false)
+                        BtnOperator(stateObj: stateObj, op: .result, isPointColor: true)
+                    }
+                }
             }
         }
     }
-    
-    func calculate(expression: String) -> Double? {
-        let changedExpression = expression.replacingOccurrences(of: "x", with: "*")
-        let mathExpression = NSExpression(format: changedExpression)
-        if let result = mathExpression.expressionValue(with: nil, context: nil) as? Double {
-            return result
-        } else {
-            return nil
-        }
-    }
-    
-    
 }
 
 struct ContentView_Previews: PreviewProvider {

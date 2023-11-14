@@ -10,10 +10,11 @@ import Foundation
 enum Operator : String, Equatable {
     case addition = "+"
     case subtraction = "-"
-    case multiplication = "*"
-    case division = "/"
+    case multiplication = "x"
+    case division = "÷"
     case reset = "C"
     case percent = "%"
     case changeSign = "+/-"
+    case point = "."
     case result = "="        
 }

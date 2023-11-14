@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct NumProcessor : Processor {
-    func process() {
-        
+struct NumProcessor  {
+    func add(_ state: State, _ number: Number) {
+        let target = String(format: "%g", number.rawValue)
+        state.number = state.number == "0" ? target : state.number + target
     }
 }

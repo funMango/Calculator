@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CalcBtnStack: View {
     let Buttons: [ButtonInfo]
-
+    @StateObject var stateObj: State
 
     var body: some View {
         HStack {
@@ -19,9 +19,9 @@ struct CalcBtnStack: View {
                 } label: {
                     switch button.type {
                     case .number(let number):
-                        BtnNumber(number: number, isPointColor: button.isPointColor)
+                        BtnNumber(stateObj: stateObj, number: number, isPointColor: button.isPointColor)
                     case .oper(let op):
-                        BtnOperator(op: op, isPointColor: button.isPointColor)
+                        BtnOperator(stateObj: stateObj, op: op, isPointColor: button.isPointColor)
                     }
                 }
             }
@@ -36,6 +36,6 @@ struct CalcBtnStack_Previews: PreviewProvider {
             ButtonInfo(type: .number(.eight), isPointColor: false),
             ButtonInfo(type: .number(.nine), isPointColor: false),
             ButtonInfo(type: .oper(.multiplication), isPointColor: true),
-        ])
+        ], stateObj: State())
     }
 }

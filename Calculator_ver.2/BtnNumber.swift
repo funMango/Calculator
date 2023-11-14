@@ -8,21 +8,28 @@
 import SwiftUI
 
 struct BtnNumber: View {
+    @StateObject var stateObj: State
     let number : Number
     let isPointColor: Bool
     
+    
     var body: some View {
-        Text(String(format: "%.0f", number.rawValue))
-            .frame(width: 80, height: 80)
-            .background(isPointColor ? Color.orange : Color.gray)
-            .cornerRadius(40)
-            .foregroundColor(.white)
-            .font(.system(size: 33))
+        Button {
+            stateObj.addNumber(number)
+        } label: {
+            Text(number.rawValue)
+                .frame(minWidth: 80, minHeight: 80)
+                .background(isPointColor ? Color.orange : Color.gray)
+                .cornerRadius(40)
+                .foregroundColor(.white)
+                .font(.system(size: 33))
+        }
+        
     }
 }
 
 struct BtnNumber_Previews: PreviewProvider {
     static var previews: some View {
-        BtnNumber(number: .seven, isPointColor: true)
+        BtnNumber(stateObj: State(), number: .seven, isPointColor: false)
     }
 }

@@ -8,21 +8,29 @@
 import SwiftUI
 
 struct BtnOperator: View {
+    @StateObject var stateObj: State
     let op : Operator
     let isPointColor: Bool
     
+    
     var body: some View {
-        Text(op.rawValue)
-            .frame(width: 80, height: 80)
-            .background(isPointColor ? Color.orange : Color.gray)
-            .cornerRadius(40)
-            .foregroundColor(.white)
-            .font(.system(size: 33))
+        Button {
+            stateObj.addOper(op)
+            print("storage: ", stateObj.storage.values)
+            //print("lastNumber: ", stateObj.storage.numbers)
+        } label: {
+            Text(op.rawValue)
+                .frame(width: 80, height: 80)
+                .background(isPointColor ? Color.orange : Color.gray)
+                .cornerRadius(40)
+                .foregroundColor(.white)
+                .font(.system(size: 33))
+        }        
     }
 }
 
 struct BtnOperator_Previews: PreviewProvider {
     static var previews: some View {
-        BtnOperator(op: .addition, isPointColor: true)
+        BtnOperator(stateObj: State(), op: .addition, isPointColor: true)
     }
 }
