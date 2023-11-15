@@ -26,7 +26,7 @@ struct BtnZero: View {
                 Spacer()
                 Spacer() // 왼쪽 정렬을 위해 Spacer 추가
             }
-            .frame(maxWidth: 170, minHeight: 80)
+            .frame(maxWidth: 180, minHeight: 80)
             .background(isPointColor ? Color.orange : Color.gray)
             .cornerRadius(40)
             .foregroundColor(.white)

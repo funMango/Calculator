@@ -32,6 +32,7 @@ struct ContentView: View {
                         BtnOperator(stateObj: stateObj, op: .percent, isPointColor: false)
                         BtnOperator(stateObj: stateObj, op: .division, isPointColor: true)
                     }
+                    .padding(2)
                     
                     GridRow {
                         BtnNumber(stateObj: stateObj, number: .seven, isPointColor: false)
@@ -39,6 +40,7 @@ struct ContentView: View {
                         BtnNumber(stateObj: stateObj, number: .nine, isPointColor: false)
                         BtnOperator(stateObj: stateObj, op: .multiplication, isPointColor: true)
                     }
+                    .padding(2)
                     
                     GridRow {
                         BtnNumber(stateObj: stateObj, number: .four, isPointColor: false)
@@ -46,6 +48,7 @@ struct ContentView: View {
                         BtnNumber(stateObj: stateObj, number: .six, isPointColor: false)
                         BtnOperator(stateObj: stateObj, op: .subtraction, isPointColor: true)
                     }
+                    .padding(2)
                     
                     GridRow {
                         BtnNumber(stateObj: stateObj, number: .one, isPointColor: false)
@@ -53,6 +56,7 @@ struct ContentView: View {
                         BtnNumber(stateObj: stateObj, number: .three, isPointColor: false)
                         BtnOperator(stateObj: stateObj, op: .addition, isPointColor: true)
                     }
+                    .padding(2)
                     
                     GridRow {
                         BtnZero(stateObj: stateObj, number: .zero, isPointColor: false)
@@ -60,7 +64,9 @@ struct ContentView: View {
                         BtnOperator(stateObj: stateObj, op: .point, isPointColor: false)
                         BtnOperator(stateObj: stateObj, op: .result, isPointColor: true)
                     }
+                    .padding(2)
                 }
+                
             }
         }
     }
