@@ -8,20 +8,24 @@
 import Foundation
 
 struct Convertor {
+    private let MIN_DIGIT = 0
+    private let MAX_DIGIT = 0
+    
     func toPostfix(_ values: [String]) -> [String] {
         var result: [String] = []
         var opers: [String] = []
         
         for value in values {
-            if value == "x" || value == "÷" {
+            if value == Operator.multiplication.rawValue || value == Operator.division.rawValue {
                 guard !opers.isEmpty else { opers.append(value); continue }
                 
-                while let op = opers.last, (op == "x" || op == "÷") {
+                while let op = opers.last,
+                        (op == Operator.multiplication.rawValue || op == Operator.division.rawValue) {
                     result.append(opers.popLast()!)
                 }
                 opers.append(value)
             }
-            else if value == "+" || value == "-" {
+            else if value == Operator.addition.rawValue || value == Operator.subtraction.rawValue {
                 guard !opers.isEmpty else { opers.append(value); continue }
                 
                 while let op = opers.popLast() {
@@ -37,9 +41,10 @@ struct Convertor {
     }
     
     func doubleToString(_ number: Double) -> String {
+        
         let formatter = NumberFormatter()
-        formatter.minimumFractionDigits = 0
-        formatter.maximumFractionDigits = 2
+        formatter.minimumFractionDigits = MIN_DIGIT
+        formatter.maximumFractionDigits = MAX_DIGIT
 
         if let formattedString = formatter.string(from: NSNumber(value: number)) {
             return formattedString

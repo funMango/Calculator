@@ -22,12 +22,17 @@
 		5AAF04B72AF0AF0700F25166 /* Calculator_ver_2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAF04B62AF0AF0700F25166 /* Calculator_ver_2UITestsLaunchTests.swift */; };
 		5AB60ED72B039F41008995E6 /* CalculateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB60ED62B039F41008995E6 /* CalculateView.swift */; };
 		5AB60EDB2B03A2D7008995E6 /* BtnZero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB60EDA2B03A2D7008995E6 /* BtnZero.swift */; };
-		5ABE91F42AFA603500FED5D2 /* OpProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABE91F32AFA603500FED5D2 /* OpProcessor.swift */; };
+		5ABE91F42AFA603500FED5D2 /* OperatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABE91F32AFA603500FED5D2 /* OperatorManager.swift */; };
 		5ABE91F62AFA641400FED5D2 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABE91F52AFA641400FED5D2 /* Operator.swift */; };
 		5ABE91FC2AFB0C6900FED5D2 /* BtnOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABE91FB2AFB0C6900FED5D2 /* BtnOperator.swift */; };
 		5ABE92482AFB31BA00FED5D2 /* ButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABE92472AFB31BA00FED5D2 /* ButtonType.swift */; };
 		5ABE924A2AFB320500FED5D2 /* ButtonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABE92492AFB320500FED5D2 /* ButtonInfo.swift */; };
 		5ABE924C2AFB435A00FED5D2 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABE924B2AFB435A00FED5D2 /* State.swift */; };
+		5AFB0D5B2B0505C4008E47EF /* Processor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB0D5A2B0505C4008E47EF /* Processor.swift */; };
+		5AFB0D5D2B050622008E47EF /* AddSubProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB0D5C2B050622008E47EF /* AddSubProcessor.swift */; };
+		5AFB0D5F2B0507E7008E47EF /* DivMulProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB0D5E2B0507E7008E47EF /* DivMulProcessor.swift */; };
+		5AFB0D612B050923008E47EF /* ResultProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB0D602B050923008E47EF /* ResultProcessor.swift */; };
+		5AFB0D632B0509EE008E47EF /* PointProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFB0D622B0509EE008E47EF /* PointProcessor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,12 +71,17 @@
 		5AAF04B62AF0AF0700F25166 /* Calculator_ver_2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator_ver_2UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5AB60ED62B039F41008995E6 /* CalculateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateView.swift; sourceTree = "<group>"; };
 		5AB60EDA2B03A2D7008995E6 /* BtnZero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnZero.swift; sourceTree = "<group>"; };
-		5ABE91F32AFA603500FED5D2 /* OpProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpProcessor.swift; sourceTree = "<group>"; };
+		5ABE91F32AFA603500FED5D2 /* OperatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorManager.swift; sourceTree = "<group>"; };
 		5ABE91F52AFA641400FED5D2 /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		5ABE91FB2AFB0C6900FED5D2 /* BtnOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnOperator.swift; sourceTree = "<group>"; };
 		5ABE92472AFB31BA00FED5D2 /* ButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonType.swift; sourceTree = "<group>"; };
 		5ABE92492AFB320500FED5D2 /* ButtonInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonInfo.swift; sourceTree = "<group>"; };
 		5ABE924B2AFB435A00FED5D2 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		5AFB0D5A2B0505C4008E47EF /* Processor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Processor.swift; sourceTree = "<group>"; };
+		5AFB0D5C2B050622008E47EF /* AddSubProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubProcessor.swift; sourceTree = "<group>"; };
+		5AFB0D5E2B0507E7008E47EF /* DivMulProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivMulProcessor.swift; sourceTree = "<group>"; };
+		5AFB0D602B050923008E47EF /* ResultProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultProcessor.swift; sourceTree = "<group>"; };
+		5AFB0D622B0509EE008E47EF /* PointProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointProcessor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +114,6 @@
 			children = (
 				5ABE91FD2AFB112900FED5D2 /* Buttons */,
 				5AAF049B2AF0AF0600F25166 /* ContentView.swift */,
-				5A4C33DE2AF76F3A00DF12F7 /* CalcBtnStack.swift */,
-				5AB60ED62B039F41008995E6 /* CalculateView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -133,7 +141,8 @@
 		5A8667062AFD1AB100998080 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5ABE91F32AFA603500FED5D2 /* OpProcessor.swift */,
+				5AFB0D592B0505A0008E47EF /* Processor */,
+				5ABE91F32AFA603500FED5D2 /* OperatorManager.swift */,
 				5A8667072AFD1AE600998080 /* Calculator.swift */,
 				5A8667092AFD1BCF00998080 /* Convertor.swift */,
 			);
@@ -163,6 +172,7 @@
 		5AAF04982AF0AF0600F25166 /* Calculator_ver.2 */ = {
 			isa = PBXGroup;
 			children = (
+				5AFB0D642B050EDA008E47EF /* Unused */,
 				5A8667062AFD1AB100998080 /* Controllers */,
 				5A4C33E22AF771ED00DF12F7 /* Models */,
 				5A4C33DB2AF76DE600DF12F7 /* ViewModel */,
@@ -207,6 +217,27 @@
 				5AB60EDA2B03A2D7008995E6 /* BtnZero.swift */,
 			);
 			name = Buttons;
+			sourceTree = "<group>";
+		};
+		5AFB0D592B0505A0008E47EF /* Processor */ = {
+			isa = PBXGroup;
+			children = (
+				5AFB0D5A2B0505C4008E47EF /* Processor.swift */,
+				5AFB0D5C2B050622008E47EF /* AddSubProcessor.swift */,
+				5AFB0D5E2B0507E7008E47EF /* DivMulProcessor.swift */,
+				5AFB0D602B050923008E47EF /* ResultProcessor.swift */,
+				5AFB0D622B0509EE008E47EF /* PointProcessor.swift */,
+			);
+			name = Processor;
+			sourceTree = "<group>";
+		};
+		5AFB0D642B050EDA008E47EF /* Unused */ = {
+			isa = PBXGroup;
+			children = (
+				5A4C33DE2AF76F3A00DF12F7 /* CalcBtnStack.swift */,
+				5AB60ED62B039F41008995E6 /* CalculateView.swift */,
+			);
+			name = Unused;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,18 +370,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AFB0D5B2B0505C4008E47EF /* Processor.swift in Sources */,
 				5A4C33DD2AF76E7700DF12F7 /* BtnNumber.swift in Sources */,
 				5ABE92482AFB31BA00FED5D2 /* ButtonType.swift in Sources */,
+				5AFB0D5D2B050622008E47EF /* AddSubProcessor.swift in Sources */,
 				5A4C33E42AF773E500DF12F7 /* Number.swift in Sources */,
 				5AAF049C2AF0AF0600F25166 /* ContentView.swift in Sources */,
+				5AFB0D5F2B0507E7008E47EF /* DivMulProcessor.swift in Sources */,
 				5ABE91F62AFA641400FED5D2 /* Operator.swift in Sources */,
 				5ABE924C2AFB435A00FED5D2 /* State.swift in Sources */,
-				5ABE91F42AFA603500FED5D2 /* OpProcessor.swift in Sources */,
+				5ABE91F42AFA603500FED5D2 /* OperatorManager.swift in Sources */,
 				5AB60ED72B039F41008995E6 /* CalculateView.swift in Sources */,
+				5AFB0D612B050923008E47EF /* ResultProcessor.swift in Sources */,
 				5ABE91FC2AFB0C6900FED5D2 /* BtnOperator.swift in Sources */,
 				5A4C33DF2AF76F3A00DF12F7 /* CalcBtnStack.swift in Sources */,
 				5A8667082AFD1AE600998080 /* Calculator.swift in Sources */,
 				5ABE924A2AFB320500FED5D2 /* ButtonInfo.swift in Sources */,
+				5AFB0D632B0509EE008E47EF /* PointProcessor.swift in Sources */,
 				5AB60EDB2B03A2D7008995E6 /* BtnZero.swift in Sources */,
 				5AAF049A2AF0AF0600F25166 /* Calculator_ver_2App.swift in Sources */,
 				5A8667052AFCFF7400998080 /* Storage.swift in Sources */,

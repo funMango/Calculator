@@ -8,23 +8,26 @@
 import Foundation
 
 class State : ObservableObject {
-    @Published var number: String = "0"
-    var storage = Storage()
-    let opProcessor = OpProcessor()
-    let convertor = Convertor()
+    let DEFAULT_NUMBER = "0"
     
+    @Published var number: String = "0"
+    
+    var storage = Storage()
+    let opManager = OperatorManager()
+    let convertor = Convertor()
+            
     func addNumber(_ number: Number) {
         if storage.isActOp {
-            self.number = "0"
+            self.number = DEFAULT_NUMBER
             storage.isActOp = false
         }
         
         let target = number.rawValue
-        self.number = self.number == "0" ? target : self.number + target
+        self.number = self.number == DEFAULT_NUMBER ? target : self.number + target
     }
     
     func addOper(_ oper: Operator) {
-        if let calcResult = opProcessor.process(self.number, self.storage, oper) {
+        if let calcResult = opManager.process(self.number, self.storage, oper) {
             self.number = calcResult
         }
         

@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+struct AddSubProcessor : Processor {
+    let calculator = Calculator()
+    
+    func process(_ number: String, _ storage: Storage, _ op: Operator) -> String? {
+        storage.push(number)
+        let result = calculator.calculate(storage)
+        storage.reset()
+        save(storage, result, op.rawValue)
+        return storage.getFirst()
+    }
+}

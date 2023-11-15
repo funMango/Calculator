@@ -20,7 +20,7 @@ struct ContentView: View {
                 HStack {
                     Spacer()
                     Text(stateObj.number)
-                        .font(.system(size: 73))
+                        .font(.system(size: 80))
                         .foregroundColor(.white)
                         .padding()
                 }

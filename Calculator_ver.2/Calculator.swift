@@ -13,8 +13,7 @@ struct Calculator {
     func calculate(_ storage: Storage) -> String {
         let profix = convertor.toPostfix(storage.values)
         let result = calcPostFix(profix)
-        return convertor.doubleToString(result)
-        //return String(result)
+        return convertor.doubleToString(result)        
     }
     
     func calculate(_ number1: String, _ number2: String, _ op: String) -> String {
@@ -43,18 +42,17 @@ struct Calculator {
     
     func calculate(_ number: Double, _ target: Double, _ op: String) -> Double {
         switch op {
-            case "+":
+            case Operator.addition.rawValue:
                 return target + number
                 
-            case "-":
-                return target - number
-                
-            case "x":
-                return target * number
-                
-            case "÷":
-                return target / number
-               
+            case Operator.subtraction.rawValue:
+                    return target - number
+                    
+            case Operator.multiplication.rawValue:
+                    return target * number
+                    
+            case Operator.division.rawValue:
+                    return target / number               
             default:
                 return 0
         }
