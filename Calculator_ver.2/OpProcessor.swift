@@ -17,7 +17,7 @@ struct OpProcessor {
             storage.reset()
             return "0"
             
-        case .addition, .subtraction:                        
+        case .addition, .subtraction:
             return process(storage, number, op)
             
         case .division, .multiplication:
@@ -29,8 +29,8 @@ struct OpProcessor {
                 }
             } else {
                 save(storage, number, op.rawValue)
-            }            
-                                                                                                                 
+            }
+            
         case .result:
             storage.push(number)
             if let num = storage.lastNumber, let oper = storage.lastOper ,(storage.values.count == 1) {
@@ -39,7 +39,7 @@ struct OpProcessor {
                 storage.lastNumber = number
                 storage.lastOper = storage.values[storage.values.count - 2]
             }
-                                    
+            
             let result = calculator.calculate(storage)
             storage.reset()
             return result
@@ -49,8 +49,14 @@ struct OpProcessor {
                 return number
             }
             return number + op.rawValue
-                                                           
-        default:
+            
+        case .changeSign:
+            return Operator.subtraction.rawValue + number
+            
+        case .percent:
+            if let num = Double(number) {
+                return String(num * 0.01)
+            }
             return nil
         }
         return nil

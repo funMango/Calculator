@@ -27,8 +27,9 @@ class State : ObservableObject {
         if let calcResult = opProcessor.process(self.number, self.storage, oper) {
             self.number = calcResult
         }
-        if oper != Operator.point {
+        
+        if oper != Operator.changeSign && oper != Operator.point {
             storage.isActOp = true
-        }
+        } 
     }        
 }
