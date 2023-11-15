@@ -57,7 +57,7 @@ struct ContentView: View {
                     GridRow {
                         BtnZero(stateObj: stateObj, number: .zero, isPointColor: false)
                             .gridCellColumns(2)
-                        BtnNumber(stateObj: stateObj, number: .eight, isPointColor: false)
+                        BtnOperator(stateObj: stateObj, op: .point, isPointColor: false)
                         BtnOperator(stateObj: stateObj, op: .result, isPointColor: true)
                     }
                 }

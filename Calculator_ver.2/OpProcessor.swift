@@ -17,29 +17,20 @@ struct OpProcessor {
             storage.reset()
             return "0"
             
-        case .addition, .subtraction:            
-            
+        case .addition, .subtraction:                        
             return process(storage, number, op)
             
         case .division, .multiplication:
-            if storage.getLast() == "x" || storage.getLast() == "÷" {
+            if storage.getLast() == Operator.division.rawValue || storage.getLast() == Operator.multiplication.rawValue {
                 if let oper = storage.popLast() , let popNum = storage.popLast() {
                     let result = calculator.calculate(popNum, number, oper)
-                    storage.push(result)
-                    storage.push(op.rawValue)
+                    save(storage, result, op.rawValue)
                     return result
                 }
             } else {
                 save(storage, number, op.rawValue)
             }            
-                        
-//        case .multiplication:
-//            if storage.getLast() == "x" || storage.getLast() == "÷" {
-//                //return process(storage, number, op)
-//            } else {
-//                save(storage, number, op.rawValue)
-//            }
-                                                                                         
+                                                                                                                 
         case .result:
             storage.push(number)
             if let num = storage.lastNumber, let oper = storage.lastOper ,(storage.values.count == 1) {
@@ -52,11 +43,21 @@ struct OpProcessor {
             let result = calculator.calculate(storage)
             storage.reset()
             return result
+            
+        case .point:
+            if let last = number.last, String(last) == op.rawValue, isContainPoint(number) {
+                return number
+            }
+            return number + op.rawValue
                                                            
         default:
             return nil
         }
         return nil
+    }
+    
+    func isContainPoint(_ str: String) -> Bool {
+        str.filter{ $0 == "."}.count > 0
     }
     
     func process(_ storage: Storage, _ number: String, _ op: Operator) -> String? {
