@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct OpProcessor {
+struct OperatorManager {
     let calculator = Calculator()
     let convertor = Convertor()
     
